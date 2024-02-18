@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.overlay-body {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.overlay-body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  backdrop-filter: brightness(1.2) blur(30px) opacity(1);
+  -webkit-backdrop-filter: brightness(1.2) blur(30px) opacity(1);
+  border-radius: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 991px) {
+  #page_content {
+    margin-left: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (min-width: 991.1px) {
+  #page_content {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 19%;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+#page_content {
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.swiper-pagination {
+  position: unset !important;
+}
+
+.membershipNav {
+  z-index: 1;
+}
+
+.membershipNav img {
+  width: 50px;
+  height: auto;
+}
+
+.mySwiper a {
+  text-decoration: none;
 }
